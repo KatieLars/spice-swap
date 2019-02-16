@@ -8,23 +8,17 @@
  */
 
 import React, {Component} from 'react';
-import {Text, View, ImageBackground, StyleSheet} from 'react-native';
+import {View, ImageBackground, StyleSheet} from 'react-native';
+import LoginPage from './src/containers/LoginPage.js';
 
 
 const styles = StyleSheet.create({
-  titleCard: {
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: 75,
-    textAlign: 'center'
-  },
    backgroundImageStyle: {
       justifyContent: 'center',
       alignItems: 'center',
       width: '100%',
       height: '100%'
     },
-
 });
 
 
@@ -38,7 +32,7 @@ export default class App extends Component {
         return (
           <View style={styles.backgroundImageStyle} >
             <ImageBackground source={backgroundPic} style={styles.backgroundImageStyle}>
-                <Text style={styles.titleCard}>Spice Swap</Text>
+                <LoginPage/>
             </ImageBackground>
           </View>
         );
