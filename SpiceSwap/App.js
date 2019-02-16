@@ -8,8 +8,7 @@
  */
 
 import React, {Component} from 'react';
-import {View, ImageBackground, StyleSheet} from 'react-native';
-import LoginPage from './components/LoginPage.js';
+import {Text, View, ImageBackground, StyleSheet} from 'react-native';
 
 
 const styles = StyleSheet.create({
@@ -28,8 +27,8 @@ const styles = StyleSheet.create({
 
 });
 
-type Props = {};
-export default class App extends Component<Props> {
+
+export default class App extends Component {
 
       render() {
         let backgroundPic = {
@@ -37,9 +36,9 @@ export default class App extends Component<Props> {
         };
 
         return (
-          <View style={styles} >
+          <View style={styles.backgroundImageStyle} >
             <ImageBackground source={backgroundPic} style={styles.backgroundImageStyle}>
-                <LoginPage />
+                <Text style={styles.titleCard}>Spice Swap</Text>
             </ImageBackground>
           </View>
         );
