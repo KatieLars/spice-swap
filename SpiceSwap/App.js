@@ -8,7 +8,7 @@
  */
 
 import React, {Component} from 'react';
-import {Text, View, ImageBackground, StyleSheet} from 'react-native';
+import {Alert, Text, View, ImageBackground, StyleSheet} from 'react-native';
 import {Button, ButtonGroup} from 'react-native-elements';
 import LoginPage from './src/containers/LoginPage.js';
 
@@ -47,12 +47,13 @@ const styles = StyleSheet.create({
 
 
 export default class App extends Component {
-
+  _onPressButton() {
+    Alert.alert('You tapped the button!')
+  };
       render() {
         let backgroundPic = {
             uri: 'https://images.unsplash.com/photo-1528615798279-02f8efa6c100?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2470&q=80'
         };
-
         return (
           <View style={styles.backgroundImageStyle} >
             <ImageBackground source={backgroundPic} style={styles.backgroundImageStyle}>
@@ -60,15 +61,15 @@ export default class App extends Component {
                 <Text style={styles.blurbStyle}>Coordinate with your friends to share, swap, and get exactly the amount of spice you need</Text>
                 <View>
                   <Button 
-                  
+                    onPress={this._onPressButton}
                     buttonStyle={styles.signupButtonStyle}
                     title="Sign Up"
                     accessibilityLabel="Sign Up for Spice Swap"
                   />
                   <Button
+                    onPress={this._onPressButton}
                     title="Sign In"
                     buttonStyle={styles.signinButtonStyle}
-                  
                     accessibilityLabel="Sign into Spice Swap"
                   />
                 </View>
@@ -78,7 +79,5 @@ export default class App extends Component {
 
        }
 }
-//
-//AppRegistry.registerComponent('SpiceSwap', () => App)
 
 
